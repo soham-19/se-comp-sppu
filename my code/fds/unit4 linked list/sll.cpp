@@ -32,6 +32,7 @@ class sll {
         void deleteFromEnd();
         void deleteEle();
         void search();
+        void swapAlt();
 
         sll() {
             this->head = NULL;
@@ -69,7 +70,7 @@ void sll::printList() {
     node * temp = this->head;
 
     while (temp != NULL) {
-        cout << temp->data << " -> ";
+        cout << temp->data << "->";
         temp = temp->next;
     }
         cout << "NULL\n";
@@ -209,6 +210,29 @@ void sll::search() {
         cout <<"Element not present\n\n";
 }
 
+void sll::swapAlt() {
+    if (head == 0 || head->next == 0)
+        return;
+    node *prev = head, *current = head->next;
+
+    head = current;
+
+    while(1) {
+        node * temp = current->next;
+        current->next = prev;
+
+        if(temp == NULL || temp->next == NULL) {
+            prev->next=temp;
+            break;
+        }
+        prev->next = temp->next;
+
+        prev = temp;
+
+        current = prev->next;
+    }
+}
+
 int main () {
 
     sll list;
@@ -227,6 +251,7 @@ int main () {
         <<"5.delete end node"<<endl
         <<"6.delete element node"<<endl
         <<"7.search element"<<endl
+        <<"8.swap alternatives"<<endl
         <<"0.exit()"<<endl;
         int choice;
         cin>>choice;
@@ -258,6 +283,10 @@ int main () {
         break;
     case 7:
         list.search();
+        list.printList();
+        break;
+    case 8:
+        list.swapAlt();
         list.printList();
         break;
     case 0 :
