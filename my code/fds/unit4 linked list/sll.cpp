@@ -210,29 +210,6 @@ void sll::search() {
         cout <<"Element not present\n\n";
 }
 
-void sll::swapAlt() {
-    if (head == 0 || head->next == 0)
-        return;
-    node *prev = head, *current = head->next;
-
-    head = current;
-
-    while(1) {
-        node * temp = current->next;
-        current->next = prev;
-
-        if(temp == NULL || temp->next == NULL) {
-            prev->next=temp;
-            break;
-        }
-        prev->next = temp->next;
-
-        prev = temp;
-
-        current = prev->next;
-    }
-}
-
 int main () {
 
     sll list;
@@ -286,7 +263,7 @@ int main () {
         list.printList();
         break;
     case 8:
-        list.swapAlt();
+        list.swapAlt ();
         list.printList();
         break;
     case 0 :
