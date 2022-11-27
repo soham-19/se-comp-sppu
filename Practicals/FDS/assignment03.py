@@ -5,11 +5,9 @@ b) Subtraction of two matrices
 c) Multiplication of two matrices
 d) Transpose of a matrix'''
 
-
-##Name : Soham Arun Kulkarni
-##RollNo.:68
-##Div:B
-
+#Name : Soham Arun Kulkarni
+#RollNo.:31
+#Div:B
 def getMat(mat,r,c):
     print("Enter the elements row-wise: ")
     for i in range(r):

@@ -9,10 +9,9 @@ e) To count the occurrences of each word in a given string
 '''
 
 
-##Name : Soham Arun Kulkarni
-##RollNo.:68
-##Div:B
-
+#Name : Soham Arun Kulkarni
+#RollNo.:31
+#Div:B
 #                                           functions
 
 def getStr():
