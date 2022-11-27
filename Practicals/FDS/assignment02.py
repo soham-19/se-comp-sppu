@@ -1,3 +1,4 @@
+
 '''
 Write a Python program to compute following operations on String:
 a) To display word with the longest length
@@ -7,6 +8,7 @@ d) To display index of first appearance of the substring
 e) To count the occurrences of each word in a given string
 '''
 
+#                                           functions
 
 def getStr():
     str = input("Enter the main string\t")
@@ -42,14 +44,25 @@ def findOccOf(str,item):
     return count
     
 def isPal(str):
-    if (str == str[::-1]):
-        print (str+" is palindrome")
-    else:
-        print(str+" is not palindrome")
+
+    start = 0
+    end = len(str)-1
+
+    while(start<=end):
+        if(str[start] == str[end]):
+            start +=1
+            end -=1
+        else:
+            print(str+" is not palindrome")
+            return
+        
+    print (str+" is palindrome")
 
 def firstOccIndex(str,sub):
     return str.find(sub)
 
+
+#                                       main program
 while True:
 
     print("1.To display word with maximum length")
@@ -59,21 +72,28 @@ while True:
     print("5.To print the index of first occurance of the substring")
     print("0.To exit")
     print()
+
     ch = int(input("Enter your choice\t"))
     
     if (ch == 0):
         print("Exiting the program.....")
         print("Exited the program successfully.....")
         exit()
+
     elif ch == 1:
         print(maxLen(getStr()))
+
     elif ch == 2:
         printOcc(getStr())   
+
     elif ch == 3:
         print(findOccOf(getStr(),getSub()))
+
     elif ch == 4:
+
         isPal(getStr())      
     elif ch == 5:
+        
         print(firstOccIndex(getStr(),getSub()))
         
     print()
