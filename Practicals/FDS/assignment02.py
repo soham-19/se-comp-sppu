@@ -8,6 +8,11 @@ d) To display index of first appearance of the substring
 e) To count the occurrences of each word in a given string
 '''
 
+
+##Name : Soham Arun Kulkarni
+##RollNo.:68
+##Div:B
+
 #                                           functions
 
 def getStr():
@@ -93,7 +98,7 @@ while True:
 
         isPal(getStr())      
     elif ch == 5:
-        
+
         print(firstOccIndex(getStr(),getSub()))
         
     print()
