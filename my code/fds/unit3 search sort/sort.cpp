@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+
 void print(int a[], int n)
 {
     for (int i = 0; i < n; i++)
@@ -32,12 +33,28 @@ void bubbleSort(int a[], int n)
         }
     }
 }
+
+void selectionSort(int arr[], int n) {
+
+    for(int i=0; i<n-1; i++){
+
+        int minPos = i;
+
+        for(int j=i+1; j<n; j++){
+
+            if(arr[j] < arr[minPos])
+                minPos = j;
+        }
+
+        swap(arr[minPos],arr[i]);
+    }
+}
 int main()
 {
 
     int a[] = {5, 4, 1, 3, 2};
     print(a, 5);
-    bubbleSort(a, 5);
+    selectionSort(a, 5);
     print(a, 5);
     return 0;
 }
