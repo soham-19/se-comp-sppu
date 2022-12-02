@@ -33,7 +33,7 @@ public:
         fflush(stdin);
         getline(cin, name);
         cout<<endl;
-        cout << "==> Enter prn no.";
+        cout << "==> Enter prn no.  ";
         fflush(stdin);
         getline(cin, prn);
         // cout<<endl;
@@ -47,10 +47,10 @@ class PinnacleClub
 public:
     node *head;
 
-    PinnacleClub()
-    {
+    PinnacleClub(){
         head = NULL;
     }
+
 
     void insertAtTail();
     void insertAtHead();

@@ -58,20 +58,16 @@ void insertionSort(int arr[], int n)
     for(int i=1; i<n; i++){
 
         int temp = arr[i];
-        int j = i - 1;
+        int j = i-1;
 
-        while( j >= 0 ) {
+        while(j>=0){
 
-            if (arr[j] < temp)
-
+            if(arr[j] > temp)
                 arr[j+1] = arr[j];
-
             else
                 break;
-
             j--;
         }
-
         arr[j+1] = temp;
     }
 }
@@ -80,6 +76,7 @@ int main()
 
     int a[] = {5, 4, 1, 3, 2};
     print(a, 5);
+    selectionSort(a, 5);
     insertionSort(a, 5);
     print(a, 5);
     return 0;
