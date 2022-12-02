@@ -30,12 +30,14 @@ public:
     {
         cout << "Enter data :" << endl;
         cout << "==> Enter name  ";
+        fflush(stdin);
         getline(cin, name);
         cout<<endl;
         cout << "==> Enter prn no.";
+        fflush(stdin);
         getline(cin, prn);
-        cout<<endl;
-        // cout << "node created.....\n";
+        // cout<<endl;
+        cout << "node created.....\n";
         next = NULL;
     }
 };
@@ -106,9 +108,15 @@ void PinnacleClub::print()
 
         while (temp != 0)
         {
-            cout << "Name : " << temp->name << "\t"
-                 << "PRN : " << temp->prn << endl;
+            if(temp == head) 
+                cout <<endl<< "PRESIDENT :"<<endl;
+            if(temp->next == NULL)
+                cout <<endl<<"SECRETARY :"<<endl;
 
+            cout << "\tName : " << temp->name << "\t"
+                 << "PRN : " << temp->prn << endl;
+            if(temp == head) 
+                cout <<endl<< "MEMBERS :"<<endl;
             temp = temp->next;
         }
     }
@@ -119,9 +127,6 @@ int main()
     PinnacleClub club001;
 
     club001.createClub();
-    // club001.insertAtTail();
-    // club001.insertAtTail();
-
     club001.print();
 
     return 0;
