@@ -55,23 +55,24 @@ void selectionSort(int arr[], int n)
 
 void insertionSort(int arr[], int n)
 {
-
-    for (int i = 1; i < n; i++)
-    {
+    for(int i=1; i<n; i++){
 
         int temp = arr[i];
-        int j;
-        for (j = i - 1; j >= 0; j--)
-        {
+        int j = i - 1;
+
+        while( j >= 0 ) {
 
             if (arr[j] < temp)
-            {
-                arr[j + 1] = arr[j];
-            }
+
+                arr[j+1] = arr[j];
+
             else
                 break;
+
+            j--;
         }
-        arr[j + 1] = temp;
+
+        arr[j+1] = temp;
     }
 }
 int main()
