@@ -32,7 +32,7 @@ public:
         cout << "==> Enter name  ";
         fflush(stdin);
         getline(cin, name);
-        cout<<endl;
+        cout << endl;
         cout << "==> Enter prn no.  ";
         fflush(stdin);
         getline(cin, prn);
@@ -47,17 +47,26 @@ class PinnacleClub
 public:
     node *head;
 
-    PinnacleClub(){
+    PinnacleClub()
+    {
         head = NULL;
     }
-
 
     void insertAtTail();
     void insertAtHead();
     void createClub();
     void print();
+    int count();
 };
-
+int PinnacleClub::count(){
+    node* temp = head;
+    int count = 0;
+    while(temp!=0){
+        temp = temp->next;
+        count++;
+    }
+    return count;
+}
 void PinnacleClub::insertAtTail()
 {
     if (head == NULL)
@@ -87,12 +96,12 @@ void PinnacleClub::insertAtHead()
 void PinnacleClub::createClub()
 {
     int ch;
-    do{
+    do
+    {
         insertAtTail();
         cout << "Continue ? 0/1   ";
-        cin>>ch;
-    }
-    while(ch);
+        cin >> ch;
+    } while (ch);
 }
 
 void PinnacleClub::print()
@@ -108,26 +117,67 @@ void PinnacleClub::print()
 
         while (temp != 0)
         {
-            if(temp == head) 
-                cout <<endl<< "PRESIDENT :"<<endl;
-            if(temp->next == NULL)
-                cout <<endl<<"SECRETARY :"<<endl;
+            if (temp == head)
+                cout << endl
+                     << "PRESIDENT :" << endl;
+            if (temp->next == NULL)
+                cout << endl
+                     << "SECRETARY :" << endl;
 
             cout << "\tName : " << temp->name << "\t"
                  << "PRN : " << temp->prn << endl;
-            if(temp == head) 
-                cout <<endl<< "MEMBERS :"<<endl;
+            if (temp == head)
+                cout << endl
+                     << "MEMBERS :" << endl;
             temp = temp->next;
         }
     }
 }
 
-int main()
-{
-    PinnacleClub club001;
+int main () {
 
-    club001.createClub();
-    club001.print();
+    int x, ch;
+    PinnacleClub club1;
 
+    while(true){
+        cout << endl
+             << "    PINNACLE CLUB    " << endl
+             << endl
+             << "1-Add Member" << endl
+             << "2-Delete Member" << endl
+             << "3-Count Members" << endl
+             << "4-Delete From Front" << endl
+             << "5-Merge Clubs" << endl
+             << "0-Exit" << endl;
+        cout << " ==>your choice ";
+        cin >> ch;
+        cout << endl;
+
+        // switch(ch){
+        //     case 1:
+        //         x = getData();
+        //         deque.insertAtFront(x);
+        //         break;
+        //     case 2:
+        //         x = getData();
+        //         deque.insertAtRear(x);
+        //         break;
+        //     case 3:
+        //         deque.deleteFromFront();
+        //         break;
+        //     case 4:
+        //         deque.deleteFromRear();
+        //         break;
+        //     case 5:
+        //         deque.display();
+        //         break;
+        //     case 0:
+        //         cout << ". . . . . Terminating . . . . ." << endl;
+        //         exit(0);
+        //     default:
+        //         cout << "Invalid choice";
+        //         break;
+        // }
+    }
     return 0;
 }
