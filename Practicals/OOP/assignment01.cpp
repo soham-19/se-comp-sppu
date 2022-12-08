@@ -2,10 +2,11 @@
 using namespace std;
 
 class Complex{
-
-    public:
+    private:
         int real;
         int img;
+
+    public:
 
         Complex (){
             this->real = 0;
@@ -27,6 +28,7 @@ class Complex{
 
             return tempObj;
         }
+
         Complex operator* (Complex &obj){
 
             // (a+ib)*(c+id) = ac + adi + bci + i^2bd = ac - bd + (ad+bc)i
@@ -38,6 +40,9 @@ class Complex{
 
             return tempObj;
         }
+
+        friend ostream& operator << (ostream &out, Complex &obj);
+        friend istream& operator >> (istream &in, Complex &obj);
 };
 
 ostream& operator<< (ostream &out, Complex &obj){
@@ -50,19 +55,17 @@ ostream& operator<< (ostream &out, Complex &obj){
         return out;
 }
 
-istream& operator>>(istream &in, Complex &obj){
+istream& operator>>(istream &inp, Complex &obj){
     cout<<"  =>Real part :  ";
-    in>>obj.real;
+    inp>>obj.real;
     cout<<"  =>Img part :  ";
-    in>>obj.img;
+    inp>>obj.img;
     cout << endl;
 
-    return in;
+    return inp;
 }
 
-void Complex :: printNum(){
-    cout << real << " + j"<<img<<endl;
-}
+// DRIVER CODE 
 
 int main () {
 
