@@ -47,10 +47,12 @@ void Queue::enqueue(int val)
         cout << "Queue is full" << endl;
         return;
     }
-    else if (front == -1)
+    else if (isEmpty()){
         front++;
+        rear++;
+    }
 
-    data[++rear] = val;
+    data[rear] = val;
         cout << "enqueued " << val << endl << endl;
 }
 

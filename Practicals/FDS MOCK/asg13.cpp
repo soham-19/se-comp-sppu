@@ -10,7 +10,6 @@ deque.
 // Name : Soham Arun Kulkarni
 // RollNo.:31
 // Div:B
-    // 5.12.2022
 
 #include <iostream>
 using namespace std;
@@ -43,108 +42,86 @@ bool Dequeue::isEmpty(){
     return front == -1 && rear == -1;
 }
 bool Dequeue::isFull(){
-    return  (front == 0 && rear == M - 1) || (front == rear + 1) ;
+    return (rear + 1 == front) || (front == 0 && rear == M-1);
 }
 void Dequeue::insertAtFront(int val){
 
     if(isFull()){
-        cout << "DE-Queue is full"<<endl;
+        cout << "Overflow"<<endl;
         return;
     }
-    else if(isEmpty()){
-        front = 0;
-        rear = 0;
-    }
-    else if(front == 0)
+    else if (isEmpty())
+        front = rear = 0;
+
+    else if (front == 0)
         front = M-1;
     
-    else
+    else    
         front--;
-        
-    data[front] = val;
-    cout << "enqueued " << val << " to front" <<endl <<endl;
-}
 
+    data[front] = val;
+}
 void Dequeue::insertAtRear(int val){
 
-    if(isFull()){
-        cout << "DE-Queue is full"<<endl;
+    if(isFull()) {
+        cout << "Overflow"<<endl;
         return;
     }
-    else if(isEmpty()){
-        front++;
-        rear++;
-    }
-    else if(rear == M-1)
+    else if (isEmpty())
+        front = rear = 0;
+    
+    else if (rear == M-1)
         rear = 0;
     
-    else
-        rear++;
-    
-    data[rear] = val;
-    cout << "enqueued " << val << " to rear" <<endl <<endl;
+    else    
+        rear = 0;
 
+    data[rear] = val;
 }
 
 void Dequeue::deleteFromFront(){
 
-    int temp = data[front];  
-
-    if(isEmpty()){
-        cout << "Queue is empty" << endl;
+    if(isEmpty()) {
+        cout << "Underflow"<<endl;
         return;
     }
 
-    else if(front == rear)
+    else if( front == rear)
         front = rear = -1;
-
-    else if(front == M-1)
-        front = 0;
-
-    else 
-        front++;
     
-    cout << "dequeued " << temp << " from front" <<endl <<endl;
+    else if (front == M-1)
+        front = 0;
+    
+    else    
+        front++;
 }
-
 void Dequeue::deleteFromRear(){
 
-    int temp = data[rear]; 
-
     if(isEmpty()){
-        cout << "Queue is empty" << endl;
+        cout << "Underflow"<<endl;
         return;
     }
 
     else if(front == rear)
         front = rear = -1;
 
-    else if( rear == 0)
+    else if(rear == 0)
         rear = M-1;
-    
-    else
+
+    else 
         rear--;
-
-    cout << "dequeued " << temp << " from rear" <<endl <<endl;
-
 }
-
 void Dequeue::display(){
-    
-    if(isEmpty()){
-        cout << "DE-Queue is empty"<<endl;
+
+    if(isEmpty()) {
+        cout << "DE-Q is empty"<<endl;
         return;
     }
-    cout << endl << "DE-Queue is :   ";
-
-    for(int i=front; i!=rear; i=(i+1)%M)
-        cout << data[i] << " ";
-
+    cout << "DE-Q is :  ";
+    for(int i=front; i!= rear; i= (i+1)%M)
+        cout << data[i]<< " ";
     cout << data[rear];
-    cout << endl;
-    cout << endl;
 }
-
 
 int main () {
 
