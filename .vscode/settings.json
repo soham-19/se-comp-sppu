@@ -3,6 +3,8 @@
         "ostream": "cpp",
         "array": "cpp",
         "string": "cpp",
-        "*.tcc": "cpp"
+        "*.tcc": "cpp",
+        "map": "cpp",
+        "algorithm": "cpp"
     }
 }

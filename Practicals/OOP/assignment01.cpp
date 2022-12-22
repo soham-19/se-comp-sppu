@@ -18,8 +18,6 @@ class Complex{
             this->img = y;
         }
 
-        void printNum();
-
         Complex operator+ ( Complex &obj){
             Complex tempObj;
 
@@ -79,12 +77,12 @@ int main () {
 
     c_add = c1 + c2;
 
-    cout << "Addition is : "<<endl;
+    cout << "Addition is : ";
     cout<<c_add;
 
     c_product = c1 * c2;
 
-    cout << "\nProduct is : "<<endl;
+    cout << "\nProduct is : ";
     cout << c_product;   
 
     return 0;

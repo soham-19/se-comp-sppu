@@ -1,12 +1,9 @@
-/*
-7. Write C++ program to implement Cohen Southerland line clipping algorithm.
-*/
 
-
-#include<iostream.h>
-#include<conio.h>
+#include<iostream>
+//#include<conio.h>
 #include<graphics.h>
 #include<math.h>
+using namespace std;
 void Window()
 {
 	line (200,200,350,200);
@@ -57,20 +54,21 @@ void Clipping  (char c[],char d[],float &x,float &y,float m)
 			cout<<"Line lying outside";
 	}
 }
-void main()
+int main()
 {
 int gdriver = DETECT, gmode, errorcode;
 float x1,y1,x2,y2;
 float m;
 char c[4],d[4];
-clrscr();
+//clrscr();
 initgraph(&gdriver, &gmode, "//Turboc3//bgi");
 cout<<"Enter coordinates";
 cin>>x1>>y1>>x2>>y2;
 cout<<"Before clipping";
 Window();
 line(x1,y1,x2,y2);
-getch();
+//getch();
+delay(1000);
 cleardevice();
 m=float((y2-y1)/(x2-x1));
 Code(c,x1,y1);
@@ -80,6 +78,7 @@ Clipping(d,c,x2,y2,m);
 cout<<"After Clipping";
 Window();
 line(x1,y1,x2,y2);
-getch();
+//getch();
+delay(20000000000);
 closegraph();
 }
