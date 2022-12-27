@@ -1,3 +1,4 @@
+// soham kulkarni
 #include<iostream>
 #include<graphics.h>
 #include<math.h>
@@ -21,7 +22,7 @@ void KochCurve::draw(int x1, int y1, int x2, int y2, int itr, int color) {
     	line(x1,y1,x2,y2);
     	
     else {
-//    	delay(10);
+    	delay(10);
     	
     	x3 = ((2*x1) + x2)/3;
     	 y3 = ((2*y1) + y2)/3;

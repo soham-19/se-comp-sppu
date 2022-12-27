@@ -58,8 +58,9 @@ void CircularQueue::enqueue(int val)
 
     cQueue[rear] = val;
 
-    cout << "enqueued " << val << endl
-         << endl;
+    // cout << "enqueued " << val << endl
+    display();
+    //      << endl;
 }
 
 void CircularQueue::dequeue()

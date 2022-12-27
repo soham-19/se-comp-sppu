@@ -25,45 +25,70 @@ class Char_Stack
             top = -1;
         }
 
-    void push(char) ;
+
+    void push(char);
+    char peek();
     void convert(char[]);
     void reverse(char []);
     void palindrome(char[]);
     void remove(char[]);
+
+    friend class checkPalindrome;
 };
-
-void Char_Stack::remove(char str[]) {
-
-    int count = 0;
-
-    for(int i=0; i<strlen(str); i++){
-
-            if (str[i] > 'A' || (str[i] > 'Z' && str[i] < 'a') || str[i] > 'z')
-                str[count++] = str[i];
-    }
-    str[count] = '\0';
-
-}
-void Char_Stack::convert(char str[]) {
-
-    remove(str);
-
-    for( int i=0; i<strlen(str); i++) {
-
-            if( str[i] >= 'A' && str[i] <= 'Z')
-                str[i] += 32;
-    }
-}
+//                                                     char stack methods 
 
 void Char_Stack::push(char x) {
 
     stk[++top] = x;
-    cout << x << " pushed on stack\n";
+    cout << "\t->  " <<stk[top] << " pushed on stack\n";
 }
+// void Char_Stack::push(char x) {
+
+
+//     stk[++top] = x;
+//     cout << "\t->  " <<stk[top] << " pushed on stack\n";
+// }
+
+class checkPalindrome{
+
+};
+bool isalphabate(char ch){
+    return (ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z');
+}
+char tolowerA(char ch){
+    if (ch >= 'A' && ch <= 'Z')
+        return ch + 32;
+    return ch;
+}
+void Char_Stack::remove(char str[]) {
+
+    int count = 0;
+
+    for (int i=0; str[i] != '\0'; i++)
+    {
+        if(isalphabate(str[i]))
+            str[count++] = tolowerA(str[i]);
+        
+    }
+
+    str[count] = '\0';
+
+}
+// void Char_Stack::convert(char str[]) {
+
+//     remove(str);
+
+//     for( int i=0; i<strlen(str); i++) {
+
+//             if( str[i] >= 'A' && str[i] <= 'Z')
+//                 str[i] += 32;
+//     }
+// }
+
 
 void Char_Stack::palindrome(char str[]) {
-
-    convert(str);
+    remove(str);
+    // convert(str);
     cout << "str : "<<str<<endl;
 
     int i = 0;
@@ -71,23 +96,23 @@ void Char_Stack::palindrome(char str[]) {
     while(i<strlen(str))
         push(str[i++]);
 
-    char temp [100] = "\0";
+    char rev [100] = "\0";
 
     int j = 0;
 
     while(top != -1) {
 
-        temp[j++] = stk[top--];
+        rev[j++] = stk[top--];
     }
 
-    temp[j] = '\0';
+    rev[j] = '\0';
 
-    cout << "Reversed string : " << temp << endl;
+    cout << "Reversed string : " << rev << endl;
 
-    if(strcmp(str,temp) == 0)
-        cout << str << " is palindrome\n";
+    if(strcmp(str,rev) == 0)
+        cout <<'\n' <<  str << " is palindrome\n\n";
     else
-        cout << str << " is not palindrome\n";
+        cout <<'\n' <<  str << " is not palindrome\n\n";
 
     
 }

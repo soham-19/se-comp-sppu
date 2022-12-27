@@ -19,7 +19,7 @@ Div:B
 def getData(list, max_size):
 
     print()
-    print("Enter FDS marks of %d students." % n)
+    print("Enter FDS marks of %d students." %max_size)
     print("Kindly enter -1 if student was absent")
     print()
 
@@ -89,7 +89,7 @@ def countAbsentStudents(list):
 
 def highestFrequency(list):
 
-    counter = 0
+    maxF = 0
     num = list[0]
 
     for i in list:
@@ -98,10 +98,11 @@ def highestFrequency(list):
 
         currentFreq = list.count(i)
 
-        if (currentFreq > counter):
-            counter = currentFreq
+        if (currentFreq > maxF):
+            maxF = currentFreq
             num = i
-    return num
+            
+    return [num,maxF]
 
 
 #                            main function

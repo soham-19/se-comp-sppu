@@ -1,12 +1,12 @@
+
 '''Write a Python program to store names and mobile numbers of your friends in sorted order on names.
 Search your friend from list using binary search (recursive and non- recursive). Insert friend if not present
 in phonebook .Write a Python program to store names and mobile numbers of your friends in sorted order on names.
 Search your friend from list using Fibonacci/Linear search. Insert friend if not present in phonebook.'''
-##Name:Shruti Sudhir Ware
-##RollNo.:68
-##Div:B
 
-
+#Name : Soham Arun Kulkarni
+#RollNo.:31
+#Div:B
 def accept_array(A):
 	n=int(input("How many  friends information you want to save : "))
 	print("Enter friend's information")
@@ -27,14 +27,14 @@ def display_array(A,n):
 			print("\tFriend %d : %10s %s "%((i+1),A[i][0],A[i][1]))
 		print("\n")
 
-def BIN(A,s,l,X):
-	if s<=l:
-		m=int((s+l)/2)
-		if(A[m][0]==X):
-			return m
+def BIN(arr,start,end,key):
+	if start<=end:
+		mid=int((start+end)/2)
+		if(arr[mid][0]==key):
+			return mid
 		else:
-			if(X < A[m][0]):
-				return BIN(A,s,m-1,X)
+			if(key < arr[mid][0]):
+				return BIN(arr,start,mid-1,key)
 			else:
 				return BIN(A,m+1,l,X)
 	return -1 #not found
@@ -100,8 +100,8 @@ def choice():
 			flag = BIN(A,0,n-1,X)
 			if flag==-1:
 				print("\n\tFriend not found :(")
-				insert_the_friend(A,n,X)
-				n=n+1
+				# insert_the_friend(A,n,X)
+				# n=n+1
 			else:
 				print("\n\t:) Friend found at location %d"%(flag+1))
 		
@@ -110,8 +110,8 @@ def choice():
 			flag=fibonacci_search(A,n,X)
 			if flag==-1:
 				print("\n\tFriend not found :(")
-				insert_the_friend(A,n,X)
-				n=n+1
+				# insert_the_friend(A,n,X)
+				# n=n+1
 			else:
 				print("\n\t:) Friend found at %d"%(flag+1))
 choice()

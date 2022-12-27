@@ -19,6 +19,7 @@ def SelectionSort(data,n):
                 data[j]=temp
             j+=1
         i+=1
+        
     print("***Sorting using Selection sort***")
     print(data)
     print()

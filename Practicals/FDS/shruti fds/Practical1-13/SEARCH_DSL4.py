@@ -1,12 +1,12 @@
-
 '''Write a Python program to store names and mobile numbers of your friends in sorted order on names.
 Search your friend from list using binary search (recursive and non- recursive). Insert friend if not present
 in phonebook .Write a Python program to store names and mobile numbers of your friends in sorted order on names.
 Search your friend from list using Fibonacci/Linear search. Insert friend if not present in phonebook.'''
+##Name:Shruti Sudhir Ware
+##RollNo.:68
+##Div:B
 
-#Name : Soham Arun Kulkarni
-#RollNo.:31
-#Div:B
+
 def accept_array(A):
 	n=int(input("How many  friends information you want to save : "))
 	print("Enter friend's information")
@@ -39,7 +39,7 @@ def BIN(A,s,l,X):
 				return BIN(A,m+1,l,X)
 	return -1 #not found
 
-def fibonacci_search(A,n,X):
+def fibonacci_search(list,n,key):
 	f1=0
 	f2=1
 	f3=f1+f2
@@ -50,10 +50,10 @@ def fibonacci_search(A,n,X):
 		f3=f1+f2
 	while f3>1:
 		i=min(offset+f1,n-1)
-		if(A[i][0]==X):
+		if(list[i][0]==key):
 			return i
 		else:
-			if X<A[i][0]:
+			if key<list[i][0]:
 				f3=f1
 				f2=f2-f1
 				f1=f3-f2
@@ -62,7 +62,7 @@ def fibonacci_search(A,n,X):
 				f2=f1
 				f1=f3-f2
 				offset = i
-	if(f2==1 and (offset+1)<n and A[offset + 1][0]==X):
+	if(f2==1 and (offset+1)<n and list[offset + 1][0]==key):
 		return offset +1
 	return -1
 def insert_the_friend(A,n,name):

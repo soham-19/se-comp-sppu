@@ -9,9 +9,8 @@ Shell Sort and display top five scores'''
 #RollNo.:31
 #Div:B
 
-def shellSort(data, n):
-
     # Rearrange elements at each n/2, n/4, n/8, ... intervals
+def shellSort(data, n):
     gap = n // 2
     while gap > 0:
         for i in range(gap, n):
@@ -19,13 +18,9 @@ def shellSort(data, n):
             j = i
             while j >= gap and data[j - gap] > temp:
                 data[j] = data[j - gap]
-                j -= gap
-
+                j = j - gap
             data[j] = temp
-        gap //= 2
-
-
-
+        gap = gap//2
 
 def insertionSort(array):
 
@@ -63,4 +58,4 @@ print(data)
 
 print("Toppers:")
 for i in range (5):
-    print(i," : ", data[i])
+    print(i+1," : ", data[i])

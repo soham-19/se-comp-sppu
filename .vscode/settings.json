@@ -5,6 +5,8 @@
         "string": "cpp",
         "*.tcc": "cpp",
         "map": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "stack": "cpp",
+        "iostream": "cpp"
     }
 }
