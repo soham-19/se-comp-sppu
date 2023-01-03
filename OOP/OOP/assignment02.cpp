@@ -122,9 +122,9 @@ int main(){
 
     cout << "Enter number of students you want to add : ";
     cin >> n;
-    Student *s_arr[n];
+    Student * s_arr[n];
 
-    for( i=0; i<n+2; i++)
+    for( i=0; i<n; i++)
         s_arr[i] = new Student;     // new operator
 
     for( int i=0; i<n; i++)

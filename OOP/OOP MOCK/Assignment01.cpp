@@ -25,7 +25,7 @@ class Complex{
     Complex operator * (Complex num){
         Complex result; 
 
-        result.real = this->real * num.real - this->img * num.real;
+        result.real = this->real * num.real - this->img * num.img;
         result.img = this->real * num.img + this->img * num.real;
 
         return result;
@@ -52,6 +52,7 @@ ostream& operator << (ostream& out, Complex obj){
         out << obj.real << " - " << obj.img << "i\n";
     else
         out << obj.real << " + " << obj.img << "i\n\n";
+    return out;
 }
 int main() {
 

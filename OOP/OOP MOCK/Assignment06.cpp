@@ -52,7 +52,7 @@ int main() {
 
                 case 0:
                     cout << endl << "   T E R M I N A T I N G"<<endl;
-                    // v.erase();
+                    v.clear();
                     exit(0);
 
                 case 1:
@@ -89,7 +89,7 @@ int main() {
 
 
 void print(Item i){
-    cout << "#" <<i.code <<" | "<< i.name<<" | "<<i.quantity<<" | "<<i.quantity << endl;
+    cout << "#" <<i.code <<"\t"<< i.name<<"\t"<<i.quantity<<"\t"<<i.quantity << endl;
     cout <<"----------------------------------------------------------------------------"<<endl;
 }
 void push_back(){

@@ -27,7 +27,7 @@ int main(){
 
     for(itr = population_map.begin(); itr != population_map.end(); itr++)
 
-        cout << itr->first<< " : "<<itr->second<<"\n";
+        cout << itr->first<< " : "<<(*itr).second<<"\n";
     
     cout << "Enter key you want to search\t";
     cin>>state;
