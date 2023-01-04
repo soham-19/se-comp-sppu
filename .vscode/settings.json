@@ -7,6 +7,7 @@
         "map": "cpp",
         "algorithm": "cpp",
         "stack": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "istream": "cpp"
     }
 }
